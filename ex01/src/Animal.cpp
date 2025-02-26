@@ -38,3 +38,8 @@ void		Animal::setType(std::string type) {
 
 	this->type = type;
 }
+
+Brain 		&Animal::getBrain(void) const {
+
+	return (*this->brainAnimal);
+}

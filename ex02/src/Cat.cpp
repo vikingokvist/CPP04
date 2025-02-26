@@ -2,7 +2,7 @@
 
 Cat::Cat() {
 
-	Animal::setType("Cat");
+	AAnimal::setType("Cat");
 	this->brainCat = new Brain();
 	std::cout << "Cat    Class Default Constructor Called" << std::endl;
 }
@@ -39,7 +39,6 @@ std::string const	&Cat::getType(void) const {
 }
 
 void	Cat::setType(const std::string &type) {
-
 	this->type = type;
 }
 

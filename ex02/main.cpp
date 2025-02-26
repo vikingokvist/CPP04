@@ -6,11 +6,11 @@ std::string	getDogIdeas(int index);
 
 int		main(void)
 {
-	// DECLARING 2 ANIMALS
-	const Animal	*dogAndCat[2];
+	// DECLARING 2 AANIMALS
+	const AAnimal	*dogAndCat[2];
 	std::cout << std::endl;
 
-	// INIT THE ANIMALS TO BE CAT AND DOG
+	// INIT THE AANIMALS TO BE CAT AND DOG
 	for (int i = 0; i < 2; i++) {
 		if (i < 2)
 			dogAndCat[i] = new Dog();
@@ -21,11 +21,12 @@ int		main(void)
 
 	// INITIALIZE THEIR BRAINS
 	Brain	*brain[2];
+	std::cout << std::endl;
 
 
 	for (int i = 0; i < 2; i++) {
 
-		// GET TYPE OF ANIMAL IT IS
+		// GET TYPE OF AANIMAL IT IS
 		dogAndCat[i]->getType();
 
 		// GET ITS BRAIN
@@ -53,7 +54,7 @@ int		main(void)
 		std::cout << "Cat Idea " << j << ": " << brain[1]->getIdeas(j) << std::endl;
 	}
 
-	// DEEP COPY OF ANIMALS using copy constructor
+	// DEEP COPY OF AANIMALS using copy constructor
 	// std::cout << std::endl;
 	// Dog	*dogA = new Dog;
 	// Dog *dogB = new Dog(*dogA);
