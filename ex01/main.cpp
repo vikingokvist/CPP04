@@ -12,13 +12,16 @@ int		main(void)
 
 	// INIT THE ANIMALS TO BE CAT AND DOG
 	for (int i = 0; i < 2; i++) {
-		if (i < 2)
+		if (i < 1)
 			dogAndCat[i] = new Dog();
 		else
 			dogAndCat[i] = new Cat();
 	}
 	std::cout << std::endl;
 
+	std::cout << std::endl;
+	dogAndCat[0]->makeSound();
+	dogAndCat[1]->makeSound();
 	// INITIALIZE THEIR BRAINS
 	Brain	*brain[2];
 

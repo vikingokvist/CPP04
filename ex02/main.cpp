@@ -6,18 +6,22 @@ std::string	getDogIdeas(int index);
 
 int		main(void)
 {
+
 	// DECLARING 2 AANIMALS
 	const AAnimal	*dogAndCat[2];
 	std::cout << std::endl;
 
+	
 	// INIT THE AANIMALS TO BE CAT AND DOG
 	for (int i = 0; i < 2; i++) {
-		if (i < 2)
+		if (i < 1)
 			dogAndCat[i] = new Dog();
 		else
 			dogAndCat[i] = new Cat();
 	}
 	std::cout << std::endl;
+	dogAndCat[0]->makeSound();
+	dogAndCat[1]->makeSound();
 
 	// INITIALIZE THEIR BRAINS
 	Brain	*brain[2];
@@ -41,6 +45,7 @@ int		main(void)
 				brain[i]->setIdeas(getCatIdeas(j), j);
 		}
 	}
+
 
 	// PRINT DOG IDEAS
 	std::cout << std::endl;
