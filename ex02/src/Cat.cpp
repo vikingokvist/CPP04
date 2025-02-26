@@ -34,20 +34,12 @@ void	Cat::makeSound(void) const {
 	std::cout << "MEOOOOOW" << std::endl;
 }
 
-std::string const	&Cat::getType(void) const {
-	return (this->type);
+const std::string		*Cat::getIdeas(void) const {
+
+	return (this->brainCat->getIdeas());
 }
 
-void	Cat::setType(const std::string &type) {
-	this->type = type;
-}
+Brain	*Cat::getBrain(void) const{
 
-void	Cat::setIdeas(Brain const &brain) {
-
-	*this->brainCat = brain;
-}
-
-Brain	&Cat::getBrain(void) const {
-
-	return (*this->brainCat);
+	return (this->brainCat);
 }

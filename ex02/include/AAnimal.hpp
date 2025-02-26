@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "Brain.hpp"
+
+class Brain;
 
 class AAnimal
 {
@@ -21,7 +22,7 @@ class AAnimal
 
 		std::string	const	&getType(void) const;
 		void			setType(std::string type);
-		virtual Brain 		&getBrain(void) const = 0;
+		virtual Brain* getBrain() const;
 };
 
 #endif

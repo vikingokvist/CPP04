@@ -1,4 +1,4 @@
-#include "AAnimal.hpp"
+#include "../include/AAnimal.hpp"
 
 AAnimal::AAnimal() {
 
@@ -37,4 +37,9 @@ std::string	const	&AAnimal::getType(void) const {
 void		AAnimal::setType(std::string type) {
 
 	this->type = type;
+}
+
+Brain* 	AAnimal::getBrain() const {
+
+	return (0);
 }
