@@ -38,8 +38,3 @@ std::string		Brain::getIdeas(int index) const {
 		return (this->ideas[index]);
 	return (this->ideas[0]);
 }
-
-void	Brain::printIdeas(int index) const {
-
-	std::cout << "Idea " << index << ": " << getIdeas(index) << std::endl;
-}

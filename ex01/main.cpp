@@ -45,15 +45,13 @@ int		main(void)
 	// PRINT DOG IDEAS
 	std::cout << std::endl;
 	for (int j = 0; j < 4; j++) {
-		std::cout << "Dog ";
-		brain[0]->printIdeas(j);
+		std::cout << "Dog Idea " << j << ": " << brain[1]->getIdeas(j) << std::endl;
 	}
 
 	// PRINT CAT IDEAS
 	std::cout << std::endl;
 	for (int j = 0; j < 4; j++) {
-		std::cout << "Cat ";
-		brain[1]->printIdeas(j);
+		std::cout << "Cat Idea " << j << ": " << brain[1]->getIdeas(j) << std::endl;
 	}
 
 	// DEEP COPY OF ANIMALS using copy constructor
