@@ -1,7 +1,8 @@
 #ifndef CAT_HPP
-#define CAT_HPP
+# define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -16,12 +17,9 @@ class Cat : public Animal
 		Cat &operator=(const Cat &other);
 		
 		void				makeSound() const;
-
-		std::string	const 	&getType(void) const;
-		void				setType(const std::string &type);
 		
-		Brain				&getBrain(void) const;
-		void				setIdeas(Brain const &brain);
+		const std::string *getIdeas(void) const;
+		Brain	*getBrain(void) const;
 		
 };
 

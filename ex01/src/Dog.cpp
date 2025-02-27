@@ -34,21 +34,12 @@ void	Dog::makeSound(void) const {
 	std::cout << "WOOF WOOF" << std::endl;
 }
 
-void	Dog::setIdeas(Brain const &brain) {
+const std::string		*Dog::getIdeas(void) const {
 
-	*this->brainDog = brain;
+	return (this->brainDog->getIdeas());
 }
 
-Brain	&Dog::getBrain(void) const {
+Brain	*Dog::getBrain(void) const{
 
-	return (*this->brainDog);
-}
-
-std::string const	&Dog::getType(void) const {
-	return (this->type);
-}
-
-void		Dog::setType(const std::string &type) {
-	
-	this->type = type;
+	return (this->brainDog);
 }

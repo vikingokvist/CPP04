@@ -1,60 +1,31 @@
 #include "./include/Dog.hpp"
 #include "./include/Cat.hpp"
+#include "./include/Brain.hpp"
 
-std::string	getCatIdeas(int index);
-std::string	getDogIdeas(int index);
+#define ANIMAL_SIZE 2
 
 int		main(void)
 {
-	// DECLARING 2 ANIMALS
-	const Animal	*dogAndCat[2];
-	std::cout << std::endl;
+	const Animal	*dogAndCat[2]; // DECLARING 2 ANIMALS
 
-	// INIT THE ANIMALS TO BE CAT AND DOG
-	for (int i = 0; i < 2; i++) {
-		if (i < 1)
+	std::cout << std::endl;
+	for (int i = 0; i < ANIMAL_SIZE; i++) { // INIT THE ANIMALS TO BE CAT AND DOG
+
+		if (i % 2 == 0)
 			dogAndCat[i] = new Dog();
 		else
 			dogAndCat[i] = new Cat();
 	}
-	std::cout << std::endl;
 
 	std::cout << std::endl;
 	dogAndCat[0]->makeSound();
 	dogAndCat[1]->makeSound();
-	// INITIALIZE THEIR BRAINS
-	Brain	*brain[2];
+
+	Brain *test = dogAndCat[1]->getBrain();
+	std::cout << test->getIdeas()[0] << std::endl;
+	std::cout << test->getIdeas()[1] << std::endl;
 
 
-	for (int i = 0; i < 2; i++) {
-
-		// GET TYPE OF ANIMAL IT IS
-		dogAndCat[i]->getType();
-
-		// GET ITS BRAIN
-		brain[i] = &dogAndCat[i]->getBrain();
-
-		// SET THEIR IDEAS
-		for (int j = 0; j < 4; j++) {
-
-			if (i < 2) 
-				brain[i]->setIdeas(getDogIdeas(j), j);
-			else
-				brain[i]->setIdeas(getCatIdeas(j), j);
-		}
-	}
-
-	// PRINT DOG IDEAS
-	std::cout << std::endl;
-	for (int j = 0; j < 4; j++) {
-		std::cout << "Dog Idea " << j << ": " << brain[1]->getIdeas(j) << std::endl;
-	}
-
-	// PRINT CAT IDEAS
-	std::cout << std::endl;
-	for (int j = 0; j < 4; j++) {
-		std::cout << "Cat Idea " << j << ": " << brain[1]->getIdeas(j) << std::endl;
-	}
 
 	// DEEP COPY OF ANIMALS using copy constructor
 	// std::cout << std::endl;
@@ -71,38 +42,10 @@ int		main(void)
 	// std::cout << std::endl;
 	// *dogC = *dogD;
 	// delete dogC; delete dogD;
-
-	// FREE DOG AND CAT
+	
 	std::cout << std::endl;
-	for (int i = 0; i < 2; i++) {
-
+	for (int i = 0; i < 2; i++) { // FREE DOG AND CAT
 		delete dogAndCat[i];
 	}
 	return (0);
-}
-
-std::string	getDogIdeas(int index) {
-
-	if (index == 0)
-		return ("FOOOOOOD");
-	else if (index == 1)
-		return ("GO TO THE PARK!!!!");
-	else if (index == 2)
-		return ("WATERRRR PLSSS");
-	else if (index == 3)
-		return ("PET ME!!!!");
-	return ("Default dog idea");
-}
-
-std::string	getCatIdeas(int index) {
-
-	if (index == 0)
-		return ("ATTACK!!");
-	else if (index == 1)
-		return ("DONT PET ME THERE");
-	else if (index == 2)
-		return ("LEAVE ME ALONE");
-	else if (index == 3)
-		return ("WHERES MY FOOD");
-	return ("Default cat idea");
 }

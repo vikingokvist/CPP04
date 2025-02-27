@@ -1,7 +1,8 @@
-#include "Brain.hpp"
+#include "../include/Brain.hpp"
 
 Brain::Brain() {
 
+	setIdeas();
 	std::cout << "Brain  Class Default Constructor Called" << std::endl;
 }
 
@@ -26,15 +27,15 @@ Brain	&Brain::operator=(const Brain &other) {
 	return (*this);
 }
 
-void		Brain::setIdeas(std::string idea, int index) {
+void		Brain::setIdeas(void) {
 
-	if (index >= 0 && index < 100)
-		this->ideas[index] = idea;
+	for (int i = 0; i < 100; i++) {
+
+		this->ideas[i] = "LETS GO TO THE PARK!!!";
+	}
 }
 
-std::string		Brain::getIdeas(int index) const {
+const std::string	*Brain::getIdeas(void) const {
 
-	if (index >= 0 && index < 100)
-		return (this->ideas[index]);
-	return (this->ideas[0]);
+	return (this->ideas);
 }

@@ -3,13 +3,11 @@
 
 #include <iostream>
 #include <string>
-#include "Brain.hpp"
+
+class Brain;
 
 class Animal
 {
-	private:
-		Brain *brainAnimal;
-		
 	protected:
 		std::string type;
 
@@ -24,7 +22,7 @@ class Animal
 
 		std::string	const	&getType(void) const;
 		void			setType(std::string type);
-		virtual Brain 		&getBrain(void) const;
+		virtual Brain* 	getBrain() const;
 };
 
 #endif
