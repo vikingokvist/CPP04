@@ -9,8 +9,8 @@ class Cure : public AMateria
 	public:
 		Cure();
 		~Cure();
-		AMateria	*clone() const;
-		void		use(ICharacter &target);
+		// AMateria	*clone() const;
+		void	use(ICharacter &target);
 };
 
 #endif

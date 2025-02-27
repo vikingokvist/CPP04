@@ -10,20 +10,12 @@ AMateria::~AMateria() {
 	std::cout << "AMateria Default Destructor Called" << std::endl;
 }
 
-void	AMateria::use(ICharacter &target) {
-
-	if (getType() == "ice") {
-		std::cout 
-		<< "* shoots an " << getType() << " bolt at " << target.getName() << " *" 
-		<< std::endl;
-	}
-	else if (getType() == "cure") {
-
-		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
-	}
-}
-
 std::string const 	&AMateria::getType(void) const {
 
 	return (this->type);
+}
+
+void	AMateria::use(ICharacter &target) {
+
+	std::cout << "* AMateria does something to " << target.getName() << " *" << std::endl;
 }

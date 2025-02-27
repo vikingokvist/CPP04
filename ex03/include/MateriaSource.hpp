@@ -13,8 +13,8 @@ class MateriaSource : public IMateriaSource
 	public:
 		MateriaSource();
 		~MateriaSource();
-		void learnMateria(AMateria *materia);
-		AMateria *createMateria(std::string const &type);
+		void 		learnMateria(AMateria *materia);
+		AMateria 	*createMateria(std::string const &type);
 		
 };
 

@@ -2,7 +2,7 @@
 # define ICHARACTER_HPP
 
 #include <iostream>
-#include "AMateria.hpp"
+#include "./AMateria.hpp"
 class AMateria;
 
 class ICharacter
@@ -15,6 +15,5 @@ class ICharacter
 		virtual void use(int idx, ICharacter &target) = 0;
 
 };
-
 
 #endif

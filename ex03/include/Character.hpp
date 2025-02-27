@@ -2,14 +2,13 @@
 # define CHARACTER_HPP
 
 #include "./ICharacter.hpp"
-#include "./AMateria.hpp"
 
 class Character : public ICharacter
 {
 	private:
 		AMateria *inventory[4];
 		std::string name;
-
+		
 	public:
 		Character(std::string namex);
 		~Character();

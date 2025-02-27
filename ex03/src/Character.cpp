@@ -27,6 +27,10 @@ Character	&Character::operator=(const Character &other) {
 	if (this != &other) {
 
 		this->name = other.name;
+		for (int i = 0; i < 4; i++) {
+			delete this->inventory[i];
+			this->inventory[i] = other.inventory[i];
+		}
 	}
 	return (*this);
 }
@@ -58,7 +62,6 @@ void 		Character::unequip(int idx) {
 		std::cout << "* " << getName() << " unequips " 
 		<< this->inventory[idx]->getType() << " from slot " << idx
 		<< " of their inventory *" << std::endl;
-		delete this->inventory[idx];
 		this->inventory[idx] = NULL;
 	}
 }
