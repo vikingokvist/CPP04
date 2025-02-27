@@ -9,7 +9,11 @@ class Ice : public AMateria
 	public:
 		Ice();
 		~Ice();
-		// AMateria 	*clone() const;
+
+		Ice(const Ice &other);
+		Ice &operator=(const Ice &other);
+		AMateria 	*clone() const;
+		
 		void 		use(ICharacter &target);
 };
 

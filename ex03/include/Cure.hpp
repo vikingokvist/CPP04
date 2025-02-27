@@ -9,7 +9,11 @@ class Cure : public AMateria
 	public:
 		Cure();
 		~Cure();
-		// AMateria	*clone() const;
+
+		Cure(const Cure &other);
+		Cure &operator=(const Cure &other);
+		AMateria	*clone() const;
+
 		void	use(ICharacter &target);
 };
 

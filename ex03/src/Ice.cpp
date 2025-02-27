@@ -10,13 +10,26 @@ Ice::~Ice() {
 	std::cout << "Ice Destructor Called" << std::endl;
 }
 
-void 	Ice::use(ICharacter &target) {
+Ice::Ice(const Ice &other) : AMateria(other) {
 
-		std::cout << "* shoots an ice bolt at "
-		<< target.getName() << " *" << std::endl;
+	*this = other;
 }
 
-// AMateria 	*Ice::clone() const {
+Ice 	&Ice::operator=(const Ice &other) {
 
+	if (this != &other) {
+		this->type = other.type;
+	}
+	return (*this);
+}
 
-// }
+AMateria	*Ice::clone() const {
+
+	return (new Ice(*this));
+}
+
+void 		Ice::use(ICharacter &target) {
+
+	std::cout << "* shoots an ice bolt at "
+	<< target.getName() << " *" << std::endl;
+}
