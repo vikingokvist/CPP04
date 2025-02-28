@@ -1,9 +1,7 @@
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
-#include <iostream>
-#include "./AMateria.hpp"
-#include "./IMateriaSource.hpp"
+#include "../abs/IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource
 {
@@ -13,9 +11,13 @@ class MateriaSource : public IMateriaSource
 	public:
 		MateriaSource();
 		~MateriaSource();
+		MateriaSource(MateriaSource const &copy);
+		MateriaSource const	&operator=(MateriaSource const &copy);
+
 		void 		learnMateria(AMateria *materia);
 		AMateria 	*createMateria(std::string const &type);
-		
+
+		bool		validMateria(std::string const &type) const;
 };
 
 #endif

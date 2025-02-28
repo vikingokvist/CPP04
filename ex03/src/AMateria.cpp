@@ -1,21 +1,25 @@
-#include "../include/AMateria.hpp"
+#include "../abs/AMateria.hpp"
 
-AMateria::AMateria(std::string const &type) : type(type) {
+AMateria::AMateria() : type(NULL) {}
 
-	std::cout << "AMateria type Constructor Called" << std::endl;
+AMateria::AMateria(std::string const &type) : type(type) {}
+
+AMateria::AMateria(AMateria const &copy) {
+
+	*this = copy;
 }
 
-AMateria::~AMateria() {
+AMateria::~AMateria() {}
 
-	std::cout << "AMateria Default Destructor Called" << std::endl;
+AMateria const 	&AMateria::operator=(AMateria const &copy) {
+
+	if (this != &copy)  {
+		this->type = copy.type;
+	}
+	return (*this);
 }
 
 std::string const 	&AMateria::getType(void) const {
 
 	return (this->type);
-}
-
-void	AMateria::use(ICharacter &target) {
-
-	std::cout << "* AMateria does something to " << target.getName() << " *" << std::endl;
 }

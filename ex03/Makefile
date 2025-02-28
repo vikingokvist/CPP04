@@ -1,7 +1,7 @@
 NAME = interfaceandrecap
 
 CPP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I ./include
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I ./include -I ./abs
 RM = rm -rf
 
 SRCS = main.cpp ./src/Ice.cpp ./src/Cure.cpp ./src/AMateria.cpp \

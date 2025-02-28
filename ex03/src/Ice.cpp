@@ -1,24 +1,15 @@
 #include "../include/Ice.hpp"
 
-Ice::Ice() : AMateria("ice") {
+Ice::Ice() : AMateria("ice") {}
 
-	std::cout << "Ice Default Type Constructor Called" << std::endl;
-}
+Ice::~Ice() {}
 
-Ice::~Ice() {
+Ice::Ice(const Ice &copy) : AMateria(copy) {}
 
-	std::cout << "Ice Destructor Called" << std::endl;
-}
+Ice 	&Ice::operator=(const Ice &copy) {
 
-Ice::Ice(const Ice &other) : AMateria(other) {
-
-	*this = other;
-}
-
-Ice 	&Ice::operator=(const Ice &other) {
-
-	if (this != &other) {
-		this->type = other.type;
+	if (this != &copy) {
+		this->type = copy.type;
 	}
 	return (*this);
 }
@@ -30,6 +21,5 @@ AMateria	*Ice::clone() const {
 
 void 		Ice::use(ICharacter &target) {
 
-	std::cout << "* shoots an ice bolt at "
-	<< target.getName() << " *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

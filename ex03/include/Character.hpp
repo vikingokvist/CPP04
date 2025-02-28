@@ -1,7 +1,9 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
-#include "./ICharacter.hpp"
+#include "../abs/ICharacter.hpp"
+#include "./MateriaSource.hpp"
+
 
 class Character : public ICharacter
 {
@@ -10,11 +12,12 @@ class Character : public ICharacter
 		std::string name;
 		
 	public:
+		Character();
 		Character(std::string namex);
 		~Character();
 
-		Character(const Character &other);
-		Character &operator=(const Character &other);
+		Character(const Character &copy);
+		Character &operator=(const Character &copy);
 
 		std::string const 	&getName() const;
 
