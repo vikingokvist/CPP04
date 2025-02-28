@@ -67,8 +67,10 @@ void 		Character::unequip(int idx) {
 }
 void 			Character::use(int idx, ICharacter &target) {
 
+
 	if (idx >= 0 && idx < 4 && this->inventory[idx]) {
 		
+		std::cout << target.getName() << " attacks with"
 		this->inventory[idx]->use(target);
 	}
 }

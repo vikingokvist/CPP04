@@ -106,6 +106,7 @@ int main()
 		dur2->use(6, *bob);
 		dur2->use(-4, *bob);
 		dur2->use(3, *bob);
+		std::cout << "HERE" << std::endl;
 		delete bob;
 		std::cout << std::endl;
 
@@ -114,3 +115,4 @@ int main()
 		return (0); 
 	}
 }
+
