@@ -40,11 +40,13 @@ std::string const 	&Character::getName() const {
 
 void 		Character::equip(AMateria *m) {
 
-	if (!m)
+	if (m == NULL) {
+		std::cout << "Error: Trying to access empty Materia slot" << std::endl;
 		return ;
+	}
 	for (int i = 0; i < 4; i++) {
 
-		if (!this->inventory[i]) {
+		if (this->inventory[i] == NULL) {
 
 			this->inventory[i] = m;
 			std::cout << "* " << getName() << " equips " 
@@ -57,20 +59,22 @@ void 		Character::equip(AMateria *m) {
 
 void 		Character::unequip(int idx) {
 
-	if (idx >= 0 && idx < 4 && this->inventory[idx]) {
+	if (idx >= 0 && idx < 4 && this->inventory[idx] != NULL) {
 
 		std::cout << "* " << getName() << " unequips " 
 		<< this->inventory[idx]->getType() << " from slot " << idx
 		<< " of their inventory *" << std::endl;
 		this->inventory[idx] = NULL;
 	}
+	else
+		std::cout << "Error: Trying to access empty Materia slot" << std::endl;
+
 }
 void 			Character::use(int idx, ICharacter &target) {
 
-
-	if (idx >= 0 && idx < 4 && this->inventory[idx]) {
-		
-		std::cout << target.getName() << " attacks with"
+	if (idx >= 0 && idx < 4 && this->inventory[idx] != NULL) {
 		this->inventory[idx]->use(target);
 	}
+	else
+		std::cout << "Error: Trying to access empty Materia slot" << std::endl;
 }

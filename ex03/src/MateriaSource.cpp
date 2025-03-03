@@ -13,7 +13,7 @@ MateriaSource::MateriaSource(MateriaSource const &copy) {
     	if (copy.materia[i])
         	this->materia[i] = copy.materia[i]->clone();
     	else
-        	this->materia[i] = 0;
+        	this->materia[i] = NULL;
 	}
 }
 
@@ -23,9 +23,9 @@ MateriaSource const	&MateriaSource::operator=(MateriaSource const &copy) {
 
 		for (int i = 0; i < 4; i++) {
 
-			if (this->materia[i]) {
+			if (this->materia[i] != NULL) {
 				delete this->materia[i];
-				copy.materia[i]->clone();
+				this->materia[i] = copy.materia[i] ? copy.materia[i]->clone() : 0;
 			}
 		}
 	}
@@ -55,19 +55,10 @@ AMateria 	*MateriaSource::createMateria(std::string const &type) {
 
 	for (int i = 0; i < 4; i++) {
 
-		if (this->materia[i] && this->materia[i]->getType() == type) {
-			return (this->materia[i]->clone());
+		if (this->materia[i] != NULL && this->materia[i]->getType() == type) {
+				return (this->materia[i]->clone());
 		}
 	}
-	return (0);
-}
-
-bool	MateriaSource::validMateria(std::string const &type) const {
-
-	for (int i = 0; i < 4; i++) {
-
-		if (this->materia[i]->getType() == type)
-			return (true);
-	}
-	return (false);
+	std::cout << type << " Materia Not Recognized." << std::endl;
+	return (NULL);
 }
