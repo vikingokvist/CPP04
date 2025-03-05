@@ -10,19 +10,19 @@ class AMateria
 {
 	protected:
 		std::string type;
-		AMateria(AMateria const &copy);
-		AMateria(std::string const &type);
 
 	public:
 		AMateria();
 		virtual ~AMateria();
+		AMateria(AMateria const &copy);
+		AMateria(std::string const &type);
 
 		AMateria const	&operator=(AMateria const &copy);
 
 		std::string const &getType(void) const;
 
 		virtual AMateria *clone() const = 0;
-		virtual void use(ICharacter &target) = 0;
+		virtual void use(ICharacter &target);
 };
 
 #endif

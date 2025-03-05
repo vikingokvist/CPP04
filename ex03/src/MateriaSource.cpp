@@ -12,8 +12,6 @@ MateriaSource::MateriaSource(MateriaSource const &copy) {
 	for (int i = 0; i < 4; i++) {
     	if (copy.materia[i])
         	this->materia[i] = copy.materia[i]->clone();
-    	else
-        	this->materia[i] = NULL;
 	}
 }
 
@@ -42,11 +40,12 @@ MateriaSource::~MateriaSource() {
 
 void 	MateriaSource::learnMateria(AMateria *materia) {
 
-	for (int i = 0; i < 4; i++) {
-
-		if (!this->materia[i]) {
+	for (int i = 0; i < 4; i++)
+	{
+		if (materia && this->materia[i] == NULL)
+		{
 			this->materia[i] = materia;
-			break ;
+			return ;
 		}
 	}
 }
@@ -59,6 +58,6 @@ AMateria 	*MateriaSource::createMateria(std::string const &type) {
 				return (this->materia[i]->clone());
 		}
 	}
-	std::cout << type << " Materia Not Recognized." << std::endl;
 	return (NULL);
 }
+
