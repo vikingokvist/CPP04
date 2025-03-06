@@ -18,8 +18,8 @@ class Cat : public AAnimal
 		
 		void				makeSound() const;
 		
-		const std::string *getIdeas(void) const;
-		Brain	*getBrain(void) const;
+		const std::string	getIdeas(unsigned int idx) const;
+		Brain				*getBrain(void) const;
 		
 };
 

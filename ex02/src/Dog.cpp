@@ -15,6 +15,7 @@ Dog::~Dog() {
 
 Dog::Dog(const Dog &other) {
 
+	std::cout << "Dog Class Copy-Constructor Called" << std::endl;
 	this->type = other.type;
 	this->brainDog = new Brain(*other.brainDog);
 }
@@ -34,9 +35,9 @@ void	Dog::makeSound(void) const {
 	std::cout << "WOOF WOOF" << std::endl;
 }
 
-const std::string		*Dog::getIdeas(void) const {
+const std::string		Dog::getIdeas(unsigned int idx) const {
 
-	return (this->brainDog->getIdeas());
+	return (this->brainDog->getIdeas(idx));
 }
 
 Brain	*Dog::getBrain(void) const{
