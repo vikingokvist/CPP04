@@ -1,9 +1,13 @@
 #include "../include/Character.hpp"
 
-Character::Character() : name("default_name") {}
+Character::Character() : name("default_name") {
+
+	std::cout << "Character Default Constructor Called" << std::endl;
+}
 
 Character::Character(std::string namex) : name(namex) {
 
+	std::cout << "Character Parameterized Constructor Called" << std::endl;
 	for (int i = 0; i < 4; i++) {
 		inventory[i] = NULL;
 		learntMaterias[i] = NULL;
@@ -12,6 +16,7 @@ Character::Character(std::string namex) : name(namex) {
 
 Character::~Character() {
 
+	std::cout << "Character Destructor Called" << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (this->inventory[i])
 			delete this->inventory[i];
@@ -22,6 +27,7 @@ Character::~Character() {
 
 Character::Character(const Character &copy) {
 
+	std::cout << "Character Copy-Constructor Called" << std::endl;
 	this->name = copy.name;
 	for (int i = 0; i < 4; i++) {
 		if (copy.inventory[i])

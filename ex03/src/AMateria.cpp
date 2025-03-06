@@ -1,15 +1,25 @@
 #include "../abs/AMateria.hpp"
 
-AMateria::AMateria() : type(NULL) {}
+AMateria::AMateria() : type(NULL) {
 
-AMateria::AMateria(std::string const &type) : type(type) {}
+	std::cout << "AMateria Default Constructor Called" << std::endl;
+}
+
+AMateria::AMateria(std::string const &type) : type(type) {
+
+	std::cout << "AMateria Parameterized Constructor Called" << std::endl;
+}
 
 AMateria::AMateria(AMateria const &copy) {
 
+	std::cout << "AMateria Copy-Constructor Called" << std::endl;
 	*this = copy;
 }
 
-AMateria::~AMateria() {}
+AMateria::~AMateria() {
+
+	std::cout << "AMateria Destructor Called" << std::endl;
+}
 
 AMateria const 	&AMateria::operator=(AMateria const &copy) {
 

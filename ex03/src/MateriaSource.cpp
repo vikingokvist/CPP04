@@ -2,6 +2,7 @@
 
 MateriaSource::MateriaSource() {
 
+	std::cout << "MateriaSource Default Constructor Called" << std::endl;
 	for (int i = 0; i < 4; i++) {
 		this->materia[i] = NULL;
 	}
@@ -9,6 +10,7 @@ MateriaSource::MateriaSource() {
 
 MateriaSource::MateriaSource(MateriaSource const &copy) {
 
+	std::cout << "MateriaSource Copy-Constructor Called" << std::endl;
 	for (int i = 0; i < 4; i++) {
     	if (copy.materia[i])
         	this->materia[i] = copy.materia[i]->clone();
@@ -32,6 +34,7 @@ MateriaSource const	&MateriaSource::operator=(MateriaSource const &copy) {
 
 MateriaSource::~MateriaSource() {
 
+	std::cout << "MateriaSource Destructor Called" << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (this->materia[i])
 			delete this->materia[i];
