@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "../include/Animal.hpp"
 
 Animal::Animal() {
 
@@ -13,6 +13,7 @@ Animal::~Animal() {
 
 Animal::Animal(const Animal &other) {
 
+	std::cout << "Animal Class Copy-Constructor Called" << std::endl;
 	*this = other;
 }
 

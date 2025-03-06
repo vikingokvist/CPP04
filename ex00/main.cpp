@@ -1,6 +1,6 @@
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#include "./include/Dog.hpp"
+#include "./include/Cat.hpp"
+#include "./include/WrongCat.hpp"
 
 int		main(void)
 {
@@ -16,6 +16,7 @@ int		main(void)
 		std::cout << i->getType() << " " << std::endl;
 		i->makeSound();
 
+		std::cout << meta->getType() << " " << std::endl;
 		meta->makeSound();
 
 		std::cout << std::endl;
@@ -31,6 +32,7 @@ int		main(void)
 		std::cout << k->getType() << " " << std::endl;
 		k->makeSound();
 
+		std::cout << meta2->getType() << " " << std::endl;
 		meta2->makeSound();
 
 		std::cout << std::endl;

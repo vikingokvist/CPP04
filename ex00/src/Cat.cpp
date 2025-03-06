@@ -1,4 +1,4 @@
-#include "Cat.hpp"
+#include "../include/Cat.hpp"
 
 Cat::Cat() {
 
@@ -13,6 +13,7 @@ Cat::~Cat() {
 
 Cat::Cat(const Cat &other) {
 
+	std::cout << "Cat Class Copy-Constructor Called" << std::endl;
 	*this = other;
 }
 

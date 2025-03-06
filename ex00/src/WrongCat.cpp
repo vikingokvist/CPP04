@@ -1,4 +1,4 @@
-#include "WrongCat.hpp"
+#include "../include/WrongCat.hpp"
 
 WrongCat::WrongCat() {
 
@@ -13,6 +13,7 @@ WrongCat::~WrongCat() {
 
 WrongCat::WrongCat(const WrongCat &other) {
 
+	std::cout << "WrongCat Class Copy-Constructor Called" << std::endl;
 	*this = other;
 }
 

@@ -1,4 +1,4 @@
-#include "WrongAnimal.hpp"
+#include "../include/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() {
 
@@ -13,6 +13,7 @@ WrongAnimal::~WrongAnimal() {
 
 WrongAnimal::WrongAnimal(const WrongAnimal &other) {
 
+	std::cout << "WrongAnimal Class Copy-Constructor Called" << std::endl;
 	*this = other;
 }
 
