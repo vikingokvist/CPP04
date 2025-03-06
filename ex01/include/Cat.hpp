@@ -1,8 +1,8 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "./Animal.hpp"
+#include "./Brain.hpp"
 
 class Cat : public Animal
 {
@@ -18,8 +18,8 @@ class Cat : public Animal
 		
 		void				makeSound() const;
 		
-		const std::string *getIdeas(void) const;
-		Brain	*getBrain(void) const;
+		const std::string	getIdeas(unsigned int idx) const;
+		Brain				*getBrain(void) const;
 		
 };
 

@@ -13,6 +13,7 @@ Brain::~Brain() {
 
 Brain::Brain(const Brain &other) {
 	
+	std::cout << "Brain Class Copy-Constructor Called" << std::endl;
 	*this = other;
 }
 
@@ -31,11 +32,15 @@ void		Brain::setIdeas(void) {
 
 	for (int i = 0; i < 100; i++) {
 
-		this->ideas[i] = "LETS GO TO THE PARK!!!";
+		this->ideas[i] = "Lets go to the park!!!";
 	}
 }
 
-const std::string	*Brain::getIdeas(void) const {
+const std::string	Brain::getIdeas(unsigned int idx) const {
 
-	return (this->ideas);
+	if (idx >= 100 || idx < 0) {
+		std::cout << "Wrong Ideas index" << std::endl;
+		return (0);
+	}
+	return (this->ideas[idx]);
 }

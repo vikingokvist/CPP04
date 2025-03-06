@@ -15,6 +15,7 @@ Cat::~Cat() {
 
 Cat::Cat(const Cat &other) {
 
+	std::cout << "Cat Class Copy-Constructor Called" << std::endl;
 	this->type = other.type;
 	this->brainCat = new Brain(*other.brainCat);
 }
@@ -34,12 +35,13 @@ void	Cat::makeSound(void) const {
 	std::cout << "MEOOOOOW" << std::endl;
 }
 
-const std::string		*Cat::getIdeas(void) const {
+const std::string		Cat::getIdeas(unsigned int idx) const {
 
-	return (this->brainCat->getIdeas());
+	return (this->brainCat->getIdeas(idx));
 }
 
 Brain	*Cat::getBrain(void) const{
 
 	return (this->brainCat);
 }
+
